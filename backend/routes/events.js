@@ -1,6 +1,6 @@
 const express = require('express');
 
-const { getAll, get, add, replace, remove}  = require('../data/event');
+const { getAll, get, add, replace, remove }  = require('../data/event');
 const {
     isValidText,
     isValidDate,
@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
         const events = await getAll();
         setTimeout(() => {
             res.json({events: events});
-        }, 2000);
+        }, 1000);
     } catch (error) {
         next(error);
     }

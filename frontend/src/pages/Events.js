@@ -15,10 +15,11 @@ const EventsPage = (props) => {
 
 export default EventsPage;
 
+// Event Loader
 export async function loader() {
     const response = await fetch('http://localhost:8080/events');
 
-    if (!response.ok) {
+    if (response.ok === false) {
         return json(
             {message: 'Could not fetch events'},
             {
